@@ -284,21 +284,47 @@ h2 {
     background-repeat: no-repeat;
 }
 
-.capability {}
+.capability .container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 2.4px 33rem;
+    /* gap: 5rem 1.8rem; */
+}
+.capability-top {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    align-self: center;
+    justify-self: stretch;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;    
+}
 
-.capability-head {}
+.capability-head {
+    padding-right: 150px;
+    align-self: flex-start;
 
-.capability-text {}
 
+}
+.capability-text {
+    font-size: 0.7em;
+    line-height: 1.2em;
+    letter-spacing: 0.2px;
+    padding-right: 30px;  
+}
 
+.capability-item {
+}
+.item1 {
+}
+.text {
+}
+.item2 {
+}
+.item3 {
+}
 
-.capability-items {}
-
-.capability-item {}
-
-.capability-item_header {}
-
-.capability-item_text {}
 
 
 .contact {
