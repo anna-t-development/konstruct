@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@400;600;700;800&display=swap');
 
 :root {
-    --color_text: #48555B;
+    --main_text: #48555B;
     --color_button: #00A4E5;
+    --color_bg: #141A20;
+    --text_small: 0.7em;
+
 
 }
 
@@ -66,7 +69,7 @@ a {
 
 header {
     background-image: url(../image/header_bg.png);
-    width: 100%;
+    width: 100vw;
     background-position: top center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -113,7 +116,7 @@ header h1 {
     margin-bottom: 7rem;
     color: #FFF;
     font-family: 'OpenSans', sans-serif;
-    font-size: 11px;
+    font-size: .7em;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
@@ -147,9 +150,6 @@ header h1 {
     vertical-align: bottom;
 } */
 
-nav {
-    margin-left: 400px;
-}
 
 .menu-list {
     display: flex;
@@ -160,13 +160,13 @@ nav {
 }
 
 .menu-item {
-    padding: 25px 0;
+    padding: 2.5rem 0;
 }
 
 .menu-item a {
     text-decoration: none;
     cursor: pointer;
-    color: black;
+    color: var(--main_text);
 }
 
 .menu-item a:hover {
@@ -178,68 +178,70 @@ h2 {
 }
 
 
-.story {}
-
-.story .container {}
-
-.story-box {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 405.076px;
-
+.story {
+    min-height: 40rem;
 }
 
-.story-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
+.story .container {
+    display: grid;
+    grid-template-columns:1fr 1fr;
+    grid-template-rows: 25px 250px;
+    gap: 80px 20px;
+    margin-bottom: 2rem;
+    place-content: center space-between;
 }
-
+.story-left {
+    padding-right: 40px;
+}
+.story-left, .story-right {
+    border: 2px solid red;
+}
+.head {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    place-self: center;
+}
+.story-title {
+    padding-bottom: 30px;
+}
 .story-text {
-    color: var(--color_text);
+    color: var(--main_text);
     font-family: OpenSans;
-    font-size: 13px;
+    font-size: 0.8em;
     font-style: normal;
     font-weight: 400;
-    line-height: 23px;
+    line-height: 1.2em;
     letter-spacing: 0.188px;
 }
-
-.story-items {
-    display: grid;
-    grid-template-columns: repeat(3, 33%);
-    gap: 20px;
+.story-right {
+    display: flex;
+    place-content:end space-between;
 }
-
-.story-items-plan {
-    background-image: url(../image/Bitmap_1.png);
-    background-repeat: no-repeat;
+.story-items {
     align-self: start;
     padding: 20px 50px 210px 15px;
     color: #FFF;
     font-family: OpenSans;
-    font-size: 24px;
+    font-size: 1.5em;
     font-style: normal;
     font-weight: 800;
-    line-height: 29px;
-    letter-spacing: 0.188px;
+    line-height: 1.8em;
+    letter-spacing: 0.012em;
 }
 
-.story-items-manage {
+.plan {
+    background-image: url(../image/Bitmap_1.png);
+    background-repeat: no-repeat;   
+}
+
+.manage {
     background-image: url(../image/Bitmap_2.png);
     background-repeat: no-repeat;
-    width: 400px;
-    height: 300px;
-
 }
 
-.story-items-build {
+.build {
     background-image: url(../image/Bitmap\ _3.png);
     background-repeat: no-repeat;
-    width: 400px;
-    height: 300px;
 }
 
 .capability {}
@@ -279,18 +281,18 @@ h2 {
 }
 
 .contact-head {
-    color: #48555B;
+    color: var(--main_text);
     max-width: 350px;
     text-align: center;
-    font-size: 30px;
+    font-size: 1.9em;
     font-weight: 700;
-    line-height: 36px;
+    line-height: 2.25em;
     letter-spacing: 0.15px;
     padding-bottom: 4.6rem;
 }
 
 .signup {
-    background: #171819;
+    background: var(--color_bg);
     align-items: center;
     padding: 3.5rem 0;
 }
@@ -304,10 +306,10 @@ h2 {
 h4 {
     color: #fff;
     text-align: center;
-    font-size: 22px;
+    font-size: 1.4em;
     font-weight: 700;
-    line-height: 30px;
-    letter-spacing: 0.846px;
+    line-height: 1.9em;
+    letter-spacing: 0.05em;
 
 }
 
@@ -328,22 +330,21 @@ footer {
 }
 
 .footer-top {
-    display: grid;
+    display: flex;
+}
 
-
+.footer-content-about {
+    padding-right: 7rem;
 }
 
 .footer-title {
-    color: #FFF;
-    font-size: 11px;
+    font-size: 0.8em;
     font-weight: 400;
-    line-height: 15px;
-    letter-spacing: 0.846px;
+    line-height: 1.2em;
+    letter-spacing: 0.05em;
     padding-bottom: 1rem;
 
 }
-
-.footer-menu {}
 
 .footer-list {
     color: #FFF;
@@ -353,10 +354,11 @@ footer {
 .footer-item {
     cursor: pointer;
     color: #FFF;
-    font-size: 11px;
+    font-size: 0.9em;
     font-weight: 600;
-    line-height: 25px;
-    letter-spacing: 0.846px;
+    line-height: 1.6em;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
 
 }
 
@@ -369,13 +371,18 @@ footer {
     color: #00A4E5;
 }
 
+.footer-content-socials{
+    margin-right: auto;
+}
+
+
 .rights {
     text-align: center;
     background: #171819;
     padding: 2.2rem 0;
     color: #FFF;
-    font-size: 11px;
+    font-size: .7em;
     font-weight: 400;
     line-height: 15px;
-    letter-spacing: 0.846px;
+    letter-spacing: 0.05em;
 }
