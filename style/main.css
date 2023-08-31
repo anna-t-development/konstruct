@@ -133,10 +133,20 @@ header h1 {
     color: #00A4E5;
 }
 
-.button-scroll:focus:focus {
+.button-scroll:focus {
     color: #12a1d9;
     box-shadow: 0 0 0 4px #cbd6ee
 }
+
+.text {
+    color: var(--main_text);
+    font-size: 0.8em;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.4em;
+    letter-spacing: 0.012em;
+}
+
 
 .main-menu .container {
     /* display: flex;
@@ -242,15 +252,6 @@ h2 {
     color:#16ACE8;
 }
 
-.story-text {
-    color: var(--main_text);
-    font-size: 0.8em;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1.4em;
-    letter-spacing: 0.012em;
-}
-
 .story-right {
     display: flex;
     justify-content: space-between;
@@ -286,13 +287,16 @@ h2 {
 
 .capability .container{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 295px 295px 295px;
     grid-template-rows: 2.4px 33rem;
-    /* gap: 5rem 1.8rem; */
+    gap: 5rem 1.8rem;
+}
+.capability-top, .capability-item {
+    border: 2px solid #db1717;
+    
 }
 .capability-top {
-    grid-column-start: 1;
-    grid-column-end: 4;
+    grid-column-end: span 3;
     align-self: center;
     justify-self: stretch;
     display: flex;
@@ -304,8 +308,6 @@ h2 {
 .capability-head {
     padding-right: 150px;
     align-self: flex-start;
-
-
 }
 .capability-text {
     font-size: 0.7em;
@@ -318,8 +320,7 @@ h2 {
 }
 .item1 {
 }
-.text {
-}
+
 .item2 {
 }
 .item3 {
